@@ -1,4 +1,4 @@
-# Filter [![Latest Stable Version](https://poser.pugx.org/rmasters/filter/v/stable.png)](https://packagist.org/packages/rmasters/filter) [![master](https://travis-ci.org/rmasters/filter.png?branch=master)](https://travis-ci.org/rmasters/filter) [![Coverage Status](https://coveralls.io/repos/rmasters/filter/badge.png)](https://coveralls.io/r/rmasters/filter)
+# Filter [![Latest Stable Version](https://poser.pugx.org/rmasters/filter/v/stable.png)](https://packagist.org/packages/rmasters/filter) [![master](https://travis-ci.org/rmasters/filter.png?branch=master)](https://travis-ci.org/rmasters/filter) [![Coverage Status](https://coveralls.io/repos/rmasters/filter/badge.png)](https://coveralls.io/r/rmasters/filter) [![versioneye dependencies](https://www.versioneye.com/user/projects/5217bad8632bac775003b749/badge.png)](https://www.versioneye.com/user/projects/5217bad8632bac775003b749)
 
 Aims to help make filtering input to your Eloquent models easier.
 
