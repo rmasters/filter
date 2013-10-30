@@ -16,14 +16,14 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.0.*",
-        "illuminate/container": "4.0.*"
+        "illuminate/support": "4.*",
+        "illuminate/container": "4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
         "satooshi/php-coveralls": "dev-master",
         "mockery/mockery": "dev-master@dev",
-        "illuminate/database": "4.0.*"
+        "illuminate/database": "4.*"
     },
     "autoload": {
         "psr-0": {
