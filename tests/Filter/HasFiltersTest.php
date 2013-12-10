@@ -6,6 +6,8 @@ class Address extends \Illuminate\Database\Eloquent\Model
 {
     use HasFilters;
 
+    protected $fillable = ['line1', 'city', 'postcode', 'country'];
+
 	protected $input = array(
 		'line1' => 'trim',
 		'city' => 'trim',
@@ -68,5 +70,22 @@ class HasFiltersTest extends \PHPUnit_Framework_TestCase
 
 		$this->assertEquals('LONDON', $this->address->city);
 		$this->assertEquals('ENGLAND_OUTPUT', $this->address->country);
-	}
+    }
+
+    public function testMassAssignmentFill()
+    {
+        $this->address->fill(array(
+            'country' => '  england  '
+        ));
+
+        $raw = $this->address->getAttributes();
+        $this->assertEquals('england_input', $raw['country']);
+    }
+
+    public function testMassAssignmentConstructor()
+    {
+        $this->address = new Address(array('postcode' => 'sw1 1aa '));
+        $raw = $this->address->getAttributes();
+        $this->assertEquals('SW1 1AA', $raw['postcode']);
+    }
 }
