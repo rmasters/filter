@@ -181,19 +181,41 @@ class Filter
 		});
 
         $this->registerFilter('upper', function($value, array $args) {
-            return strtoupper($value);
+            return mb_strtoupper($value);
         });
 
         $this->registerFilter('lower', function($value, array $args) {
-            return strtolower($value);
+            return mb_strtolower($value);
         });
 
         $this->registerFilter('capfirst', function($value, array $args) {
-            return ucfirst($value);
+            return $this->mb_ucfirst($value);
         });
 
         $this->registerFilter('lowerfirst', function($value, array $args) {
-            return lcfirst($value);
+            return $this->mb_lcfirst($value);
         });
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    protected function mb_ucfirst($string)
+    {
+        $firstChar = mb_substr($string, 0, 1);
+        $then = mb_substr($string, 1, null);
+        return mb_strtoupper($firstChar) . $then;
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    protected function mb_lcfirst($string)
+    {
+        $firstChar = mb_substr($string, 0, 1);
+        $then = mb_substr($string, 1, null);
+        return mb_strtolower($firstChar) . $then;
     }
 }
