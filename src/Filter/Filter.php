@@ -199,23 +199,24 @@ class Filter
 
     /**
      * @param $string
+     * @param string $encoding
      * @return string
      */
-    protected function mb_ucfirst($string)
+    protected function mb_ucfirst($string, $encoding = 'UTF-8')
     {
-        $firstChar = mb_substr($string, 0, 1);
-        $then = mb_substr($string, 1, null);
-        return mb_strtoupper($firstChar) . $then;
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, null, $encoding);
+        return mb_strtoupper($firstChar, $encoding) . $then;
     }
 
     /**
      * @param $string
      * @return string
      */
-    protected function mb_lcfirst($string)
+    protected function mb_lcfirst($string, $encoding = 'UTF-8')
     {
-        $firstChar = mb_substr($string, 0, 1);
-        $then = mb_substr($string, 1, null);
-        return mb_strtolower($firstChar) . $then;
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then = mb_substr($string, 1, null, $encoding);
+        return mb_strtolower($firstChar, $encoding) . $then;
     }
 }
